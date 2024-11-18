@@ -168,46 +168,49 @@ export const Specified_node = () => {
         <div>
           <div className="grid-cards-container">
             {nodesData.reports.map((report) => (
-              <div key={report.id} className="single_card_report">
-                <h2>{report.title}</h2>
-                <p>{report.value}</p>
-                <Button
-                  onClick={() => handle_report_delete(report.report_id)}
-                  sx={{
-                    position: "absolute",
-                    bottom: "60px",
-                    right: "0px",
-                    left: "165px",
-                    color: "white",
-                  }}
-                >
-                  {" "}
-                  <DeleteIcon />{" "}
-                </Button>
-                <Button
-                  onClick={() => handle_report_rules(report.report_id)}
-                  sx={{
-                    position: "absolute",
-                    bottom: "30px",
-                    right: "0px",
-                    left: "165px",
-                    color: "white",
-                  }}
-                >
-                  {" "}
-                  <RuleIcon />{" "}
-                </Button>
-                <Button
-                  onClick={() => handle_report_graph(report.report_id)}
-                  sx={{
-                    position: "absolute",
-                    bottom: "2px",
-                    left: "165px",
-                    color: "white",
-                  }}
-                >
-                  <AutoGraphIcon />
-                </Button>
+              <div>
+                <div key={report.id} className="single_card_report">
+                  <h2>{report.title}</h2>
+                  <p>{report.value}</p>
+                  <Button
+                    onClick={() => handle_report_delete(report.report_id)}
+                    sx={{
+                      position: "absolute",
+                      bottom: "70px",
+                      right: "0px",
+                      left: "170px",
+                      color: "white",
+                    }}
+                  >
+                    {" "}
+                    <DeleteIcon />{" "}
+                  </Button>
+                  <Button
+                    onClick={() => handle_report_rules(report.report_id)}
+                    sx={{
+                      position: "absolute",
+                      bottom: "30px",
+                      right: "0px",
+                      left: "168px",
+                      color: "white",
+                    }}
+                  >
+                    {" "}
+                    <RuleIcon />{" "}
+                  </Button>
+                  <Button
+                    onClick={() => handle_report_graph(report.report_id)}
+                    sx={{
+                      position: "absolute",
+                      bottom: "2px",
+                      left: "168px",
+                      color: "white",
+                    }}
+                  >
+                    <AutoGraphIcon />
+                  </Button>
+                </div>
+                <h2 className="report-time">{report.time}</h2>
               </div>
             ))}
           </div>

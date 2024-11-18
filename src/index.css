@@ -5,5 +5,8 @@
 }
 
 body {
-  background-color: #000000;
+  /* background-color: #ffffff; */
+  background-image: url('assets/gradient-edit.jpg');
+  background-size: cover;
+  
 }
