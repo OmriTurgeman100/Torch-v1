@@ -23,7 +23,7 @@ In the "tests" folder, there are various blackbox scripts which allow us to send
 
 ![צילום מסך 2024-11-18 200317](https://github.com/user-attachments/assets/ebf29a7d-bad6-4c2f-b1bf-63357b0a4bfb)
 
-In order to use the reports we sent, going to the reports section is needed and there we can choose our report.
+In order to use the reports we sent, going to the reports section is needed and there we can select our report.
 
 ![צילום מסך 2024-11-18 194646](https://github.com/user-attachments/assets/2220464a-2ebc-406e-8519-58e5d56ab6c8)
 final step, in order to run threads to this
