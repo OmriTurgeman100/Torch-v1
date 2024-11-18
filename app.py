@@ -682,7 +682,7 @@ def thread_evaluation(id):
         for rule in rules:
             condition = rule['conditions']
             action = rule['action']
-            if threaded_evaluate_rules(condition, action, nodes_and_their_status): # * return true if there is a match.
+            if threaded_evaluate_rules(condition, action, nodes_and_their_status): # * returns true if there is a match.
 
                 if action == "set_parent_status_up":
 
