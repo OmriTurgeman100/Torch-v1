@@ -6,11 +6,16 @@ from datetime import datetime, timedelta
 import psycopg2  
 from constants import DB_HOST, DB_NAME, DB_USER, DB_PASS
 from threading import Thread
+from multiprocessing import Process
+from werkzeug.serving import WSGIRequestHandler
+import logging
 import time
 
 app = Flask(__name__)
 
 CORS(app)
+
+logging.getLogger('werkzeug').setLevel(logging.ERROR) # * used to disable errors via terminal.
 
 def get_db_connection(): # * config
     try:
@@ -33,9 +38,9 @@ def get_db_connection(): # * config
 def root():
     try:
         response = {
-            "message": "Monitoring system api",
+            "message": "monitoring system api",
             "status": "ok",
-            "version": "1.0.0" 
+            "version": "2.0.0" 
         }
         return jsonify(response), 200
     except Exception as e:
@@ -354,7 +359,41 @@ def post_report():
 
             evaluate_report_rules(report_id, value, report_parent)
 
+            update_tree_time(report_id)
+
             return jsonify(new_node), 201  
+
+    except Exception as e:
+        print(e)
+        return jsonify({"error": str(e)}), 500  
+    finally:
+        cursor.close()
+        postgres.close()
+
+def update_tree_time(report_id):
+    try:
+        postgres = get_db_connection()
+        cursor = postgres.cursor(cursor_factory=RealDictCursor)
+
+        cursor.execute("select * from reports where report_id = %s order by time desc", (report_id,))
+        latest_report = cursor.fetchone()
+
+        report_time = latest_report['time']
+        parent = latest_report['parent']
+
+        while True:
+            if parent != None:
+
+                cursor.execute("update nodes set time = %s where node_id = %s", (report_time, parent))
+                postgres.commit()
+
+                cursor.execute("select * from nodes where node_id = %s", (parent,))
+                specified_node = cursor.fetchone()
+
+                parent = specified_node['parent']
+
+            else:
+                break
 
     except Exception as e:
         print(e)
@@ -682,7 +721,7 @@ def thread_evaluation(id):
         for rule in rules:
             condition = rule['conditions']
             action = rule['action']
-            if threaded_evaluate_rules(condition, action, nodes_and_their_status): # * returns true if there is a match.
+            if threaded_evaluate_rules(condition, action, nodes_and_their_status): # * return true if there is a match.
 
                 if action == "set_parent_status_up":
 
@@ -701,22 +740,25 @@ def thread_evaluation(id):
  
     except Exception as e:
         print(e)
-        return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
         postgres.close()
 
 def threaded_evaluate_rules(condition, action, nodes_and_their_status):
-    operator = condition['operator']
-    node_conditions = condition['conditions']
+    try:
+        operator = condition['operator']
+        node_conditions = condition['conditions']
 
-    if operator == 'AND':
-        result = all(nodes_and_their_status.get(cond['node_id']) == cond['status'] for cond in node_conditions)
-        return result
+        if operator == 'AND':
+            result = all(nodes_and_their_status.get(cond['node_id']) == cond['status'] for cond in node_conditions)
+            return result
 
-    elif operator == 'OR':
-        result = any(nodes_and_their_status.get(cond['node_id']) == cond['status'] for cond in node_conditions)
-        return result
+        elif operator == 'OR':
+            result = any(nodes_and_their_status.get(cond['node_id']) == cond['status'] for cond in node_conditions)
+            return result
+        
+    except Exception as e:
+        print(e)
     
 def rules_evaluation_thread(): #TODO , consider making it run as a threaded process.
     try: 
