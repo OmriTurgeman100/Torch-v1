@@ -6,7 +6,7 @@
 
 body {
   /* background-color: #ffffff; */
-  background-image: url('assets/gradient-edit.jpg');
-  background-size: cover;
-  
+  background-image: url("assets/view.jpg");
+  /* background-size: cover; */
 }
+

@@ -38,9 +38,9 @@ def get_db_connection(): # * config
 def root():
     try:
         response = {
-            "message": "monitoring system api",
+            "message": "Monitoring system api",
             "status": "ok",
-            "version": "2.0.0" 
+            "version": "1.0.0" 
         }
         return jsonify(response), 200
     except Exception as e:
@@ -151,7 +151,7 @@ def post_data():
         cursor.execute("SELECT * FROM reports WHERE parent = %s", (parent,))
         nodes = cursor.fetchone()
 
-        print(nodes)
+        # print(nodes)
 
         if parent and nodes:
             return jsonify(message="Cannot create node: a report with the same parent already exists."),400
@@ -177,7 +177,7 @@ def post_data():
 @app.route("/api/v1/delete/node/<id>", methods=["DELETE"]) #! delete
 def delete_node(id): # TODO make that you can't delete nodes if they have rules under them. 
     try:
-        print(type(id))
+        # print(type(id))
         postgres = get_db_connection()
         cursor = postgres.cursor(cursor_factory=RealDictCursor)
         
@@ -646,8 +646,8 @@ def expired_tree_thread():
         cursor.close()
         postgres.close()
 
-thread = Thread(target=(expired_tree_thread))
-thread.start()
+# thread = Thread(target=(expired_tree_thread))
+# thread.start()
  
 # * node rules
 @app.route("/api/v1/post/node/rules/<id>", methods=["POST"]) # * post
@@ -698,7 +698,6 @@ def get_specific_node_rule(id):
     
     except Exception as e:
         print(e)
-        print('error')
         return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
@@ -780,8 +779,8 @@ def rules_evaluation_thread(): #TODO , consider making it run as a threaded proc
         postgres.close()
 
 
-thread = Thread(target=rules_evaluation_thread)
-thread.start()
+# thread = Thread(target=rules_evaluation_thread)
+# thread.start()
  
 # ! delete node rule
 @app.route("/api/v1/delete/node/rule/<id>", methods=["DELETE"])
@@ -825,6 +824,18 @@ def check_parent_node_rules(id):
         cursor.close()
         postgres.close()
 
+def run_background_threads():
+
+    rules_evaluation_thread_process = Process(target=rules_evaluation_thread)
+    rules_evaluation_thread_process.start()
+
+    expired_tree_thread_process = Process(target=expired_tree_thread)
+    expired_tree_thread_process.start()
+
 if __name__ == "__main__":
-    app.run(debug=True, port=80) #TODO when app is ready, change debug to false.
+    process = Process(target=rules_evaluation_thread)
+    process.start()
+   
+if __name__ == "__main__":
+    app.run(debug=False, port=80) #TODO when app is ready, change debug to false.
   
