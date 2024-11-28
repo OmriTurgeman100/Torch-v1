@@ -50,6 +50,14 @@ Torch is designed to maximize performance by utilizing native SQL for all databa
 
 ![Desktop Screenshot 2024 11 28 - 02 57 52 52](https://github.com/user-attachments/assets/aae59a75-ebd4-499e-b766-15fb7c7426d5)
 
+![Desktop Screenshot 2024 11 28 - 03 04 05 83](https://github.com/user-attachments/assets/8c0a6316-430f-4b96-b654-d9c498f19f31)
+
+![Desktop Screenshot 2024 11 28 - 03 04 28 40](https://github.com/user-attachments/assets/4d099755-8cf2-4110-9304-05364467663f)
+
+![Desktop Screenshot 2024 11 28 - 03 05 56 50](https://github.com/user-attachments/assets/cccaaa30-246f-43ba-a91e-512062b06ffc)
+
+![Desktop Screenshot 2024 11 28 - 03 06 09 30](https://github.com/user-attachments/assets/70326a52-1ec8-480e-b2b9-d397c647ddd1)
+
 ---
 
 ## System Requirements
