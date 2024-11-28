@@ -1,5 +1,5 @@
-![Desktop Screenshot 2024 11 28 - 01 49 53 92](https://github.com/user-attachments/assets/f64e73d9-e67a-4dd1-9f38-d578b54dc7c6)![Desktop Screenshot 2024 11 28 - 01 49 31 56](https://github.com/user-attachments/assets/64e21056-1e2f-4c91-9e07-18edd94274c0)Torch is a micro-monitoring system that allows users to create their own custom hierarchy and set rules for each layer. It utilizes multiprocessing in the backend for efficient performance. Users can organize their monitoring structure as needed and define specific actions or conditions at each level.
-![Desktop Screenshot 2024 11 28 - 01 50 34 57](https://github.com/user-attachments/assets/ffe7444f-375e-4535-8788-4c33195b1936)
+Torch is a micro-monitoring system that allows users to create their own custom hierarchy and set rules for each layer. It utilizes multiprocessing in the backend for efficient performance. Users can organize their monitoring structure as needed and define specific actions or conditions at each level.
+![Desktop Screenshot 2024 11 28 - 02 14 54 57](https://github.com/user-attachments/assets/1ecc19fa-248e-4dcb-980c-c6c3f9a913ae)
 Root page
 ![Desktop Screenshot 2024 11 28 - 01 50 34 57](https://github.com/user-attachments/assets/240279e0-1797-4d88-a02a-92f9d7999c81)
 In Torch Users make their own blackbox script and send the results to the Thorch's ap in order to create a report. and start building their own monitoring hierarchy.
