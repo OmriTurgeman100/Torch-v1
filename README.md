@@ -10,6 +10,8 @@ In Torch Users make their own blackbox script and send the results to the Thorch
 
 Then users can select it and start building their monitoring hierarchy
 
+![Desktop Screenshot 2024 11 28 - 02 17 37 54](https://github.com/user-attachments/assets/91cece15-def2-4b29-8911-0d3e3b180077)
+
 ![Desktop Screenshot 2024 11 28 - 01 49 31 56](https://github.com/user-attachments/assets/f2a1f4c5-2618-46dd-abc9-ad076f533061)
 
 Here we define rules which effect the parent.
