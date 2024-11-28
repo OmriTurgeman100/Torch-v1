@@ -1,68 +1,58 @@
-Torch is a micro-monitoring system that allows users to create their own custom hierarchy and set rules for each layer. It utilizes multiprocessing in the backend for efficient performance. Users can organize their monitoring structure as needed and define specific actions or conditions at each level.
+# Torch: A Customizable Micro-Monitoring System
 
-![Desktop Screenshot 2024 11 28 - 02 14 54 57](https://github.com/user-attachments/assets/1ecc19fa-248e-4dcb-980c-c6c3f9a913ae)
+**Torch** is a micro-monitoring system that enables users to create custom hierarchies and define rules for each layer. It utilizes multiprocessing in the backend for efficient performance. With Torch, users can structure their monitoring framework as needed and define specific actions or conditions at every level.
 
-In Torch Users make their own blackbox script and send the results to the Thorch's ap in order to create a report. and start building their own monitoring hierarchy.
+---
 
-![Desktop Screenshot 2024 11 28 - 02 06 00 83](https://github.com/user-attachments/assets/1c5451f3-07f8-4c09-bd26-6506e6eb1be5)
+## Key Features
 
-![Desktop Screenshot 2024 11 28 - 02 06 24 15](https://github.com/user-attachments/assets/82d208f4-d835-42d2-aff7-70a82f289edb)
+- **Custom Monitoring Hierarchies**: Design monitoring structures that suit your needs.
+- **Rule-Based Management**: Define rules and conditions for nodes and parent entities, enabling dynamic status updates.
+- **Efficient Backend**: Multiprocessing ensures fast and scalable performance.
+- **Script Integration**: Submit results from custom black-box scripts to Torch's API to create reports and build hierarchies.
+- **Web-Based Interface**: Easily manage nodes, configure rules, and visualize monitoring paths.
 
-Then users can select it and start building their monitoring hierarchy
+---
 
-![Desktop Screenshot 2024 11 28 - 02 17 37 54](https://github.com/user-attachments/assets/91cece15-def2-4b29-8911-0d3e3b180077)
+## How It Works
 
-![Desktop Screenshot 2024 11 28 - 01 49 31 56](https://github.com/user-attachments/assets/f2a1f4c5-2618-46dd-abc9-ad076f533061)
+### Step 1: Generate Reports from Custom Scripts
+Users start by creating custom scripts and sending results to Torch's API to generate a report. This forms the basis for monitoring hierarchies.
 
-On the report we define rules which effect the parent based of the report's value.
+![Step 1](https://github.com/user-attachments/assets/1ecc19fa-248e-4dcb-980c-c6c3f9a913ae)
 
-![Desktop Screenshot 2024 11 28 - 01 49 41 45](https://github.com/user-attachments/assets/f6539403-9758-4de3-adcc-12f4a734e46d)
+### Step 2: Build the Monitoring Hierarchy
+Select the generated reports and use them to create a hierarchical structure. Nodes represent the building blocks of the hierarchy.
 
-Another report
+![Hierarchy Selection](https://github.com/user-attachments/assets/91cece15-def2-4b29-8911-0d3e3b180077)
 
-![Desktop Screenshot 2024 11 28 - 01 51 34 58](https://github.com/user-attachments/assets/16d34ee6-3c96-42de-a12f-3b48aa94738a)
+### Step 3: Define Rules and Conditions
+At each level of the hierarchy, define custom rules and conditions. These determine how the parent entities react when conditions are met.
 
-Rules
+#### Example Rules for Nodes:
+![Node Rules](https://github.com/user-attachments/assets/39456823-49f9-4de3-a44c-ac634bfb35c7)
 
-![Desktop Screenshot 2024 11 28 - 01 51 10 03](https://github.com/user-attachments/assets/85390469-5aec-49a5-ab46-6e0cdf75cf03)
+#### Example Rules for Parent Entities:
+![Parent Rules](https://github.com/user-attachments/assets/f6539403-9758-4de3-adcc-12f4a734e46d)
 
-When a condition is met, the parent entitiy status will get updated based of the rules action
+When conditions are triggered, parent entities update their status dynamically based on the rules. Visual indicators (e.g., color changes) reflect these updates.
 
-![Desktop Screenshot 2024 11 28 - 01 49 53 92](https://github.com/user-attachments/assets/e3de6e42-fc89-4af5-8209-0df94efcc95a)
+![Dynamic Updates](https://github.com/user-attachments/assets/e3de6e42-fc89-4af5-8209-0df94efcc95a)
 
-Reports are holding the initial value for the whole monitoring path, nodes are what we use In order to build our monitoring hierarchy.
-We can define rules for nodes also
+### Step 4: Monitor Real-Time Status
+Torch provides a clear view of the monitoring path, with statuses propagated throughout the hierarchy based on conditions.
 
-![Desktop Screenshot 2024 11 28 - 01 50 06 48](https://github.com/user-attachments/assets/39456823-49f9-4de3-a44c-ac634bfb35c7)
+![Report Example](https://github.com/user-attachments/assets/16d34ee6-3c96-42de-a12f-3b48aa94738a)
 
-Rules
+---
 
-![Desktop Screenshot 2024 11 28 - 01 50 14 44](https://github.com/user-attachments/assets/e04baa3c-2d16-406d-bcfa-7fb363506dc7)
+## System Requirements
 
-If a condition is met the parent node status will get effected and colored
+Torch requires the following dependencies:
+- **Python**
+- **Node.js**
 
-![Desktop Screenshot 2024 11 28 - 01 50 34 57](https://github.com/user-attachments/assets/5c9fd3bd-aae5-4d48-a5be-6ca35314c77c)
-
-At each layer we can define our custom rules
-
-![Desktop Screenshot 2024 11 28 - 01 50 26 36](https://github.com/user-attachments/assets/0f6111fb-ca52-442f-89cd-726f40dd60fe)
-
-If a report didn't get a new value after 30 minutes, the whole tree status will change to be expired it means that data for the report has not arrived
-
-![Desktop Screenshot 2024 11 28 - 02 24 59 01](https://github.com/user-attachments/assets/fe326c7f-1aa3-4293-97e8-f5b384c1761a)
-
-In order to run threads we need to execute the sql scripts in order to create our postgres tables
-
-![Desktop Screenshot 2024 11 28 - 02 26 40 24](https://github.com/user-attachments/assets/ae3f3c20-0f69-4c76-b9c6-f20efc643c46)
-
-in the constants.py file we will fill our database credentials
-
-![Desktop Screenshot 2024 11 28 - 02 28 05 70](https://github.com/user-attachments/assets/2557fc5c-c222-4e36-8430-d54a4f0c72e9)
-
-
-
-
-
-
-
-
+### Starting the Application
+To launch the web-based interface, run the following script:
+```bash
+python run.py
