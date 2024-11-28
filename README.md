@@ -46,6 +46,12 @@ Torch provides a clear view of the monitoring path, with statuses propagated thr
 
 ---
 
+Torch is designed to maximize performance by utilizing native SQL for all database interactions. By bypassing Object-Relational Mappers (ORMs), it eliminates the additional abstraction layers and overhead that can slow down query execution. This approach ensures precise control over database operations, allowing for faster, more efficient data handling and greater flexibility in optimizing queries to suit specific performance needs.
+
+![Desktop Screenshot 2024 11 28 - 02 57 52 52](https://github.com/user-attachments/assets/aae59a75-ebd4-499e-b766-15fb7c7426d5)
+
+---
+
 ## System Requirements
 
 Torch requires the following dependencies:
