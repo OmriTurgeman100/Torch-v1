@@ -14,7 +14,7 @@ Then users can select it and start building their monitoring hierarchy
 
 ![Desktop Screenshot 2024 11 28 - 01 49 31 56](https://github.com/user-attachments/assets/f2a1f4c5-2618-46dd-abc9-ad076f533061)
 
-Here we define rules which effect the parent.
+On the report we define rules which effect the parent based of the report's value.
 
 ![Desktop Screenshot 2024 11 28 - 01 49 41 45](https://github.com/user-attachments/assets/f6539403-9758-4de3-adcc-12f4a734e46d)
 
@@ -46,4 +46,23 @@ If a condition is met the parent node status will get effected and colored
 At each layer we can define our custom rules
 
 ![Desktop Screenshot 2024 11 28 - 01 50 26 36](https://github.com/user-attachments/assets/0f6111fb-ca52-442f-89cd-726f40dd60fe)
+
+If a report didn't get a new value after 30 minutes, the whole tree status will change to be expired it means that data for the report has not arrived
+
+![Desktop Screenshot 2024 11 28 - 02 24 59 01](https://github.com/user-attachments/assets/fe326c7f-1aa3-4293-97e8-f5b384c1761a)
+
+In order to run threads we need to execute the sql scripts in order to create our postgres tables
+
+![Desktop Screenshot 2024 11 28 - 02 26 40 24](https://github.com/user-attachments/assets/ae3f3c20-0f69-4c76-b9c6-f20efc643c46)
+
+in the constants.py file we will fill our database credentials
+
+![Desktop Screenshot 2024 11 28 - 02 28 05 70](https://github.com/user-attachments/assets/2557fc5c-c222-4e36-8430-d54a4f0c72e9)
+
+
+
+
+
+
+
 
