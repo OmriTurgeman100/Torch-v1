@@ -54,9 +54,8 @@ Torch requires the following dependencies:
 
 ### Starting the Application
 To launch the web-based interface, run the following script:
+
 ![Desktop Screenshot 2024 11 28 - 02 28 47 78](https://github.com/user-attachments/assets/297d6cf4-18dc-44cf-b4d8-8bdf938385c1)
+
 ```bash
 python run.py
-
-
-
