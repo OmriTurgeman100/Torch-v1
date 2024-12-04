@@ -14,4 +14,13 @@ def get_database_connection(): # * config
     except Exception as e:
         print(e)
 
+
+def insert_root():
+    try: 
+        postgres = get_database_connection()
+        cursor = postgres.cursor() 
+
+        
     
+    except Exception as e:
+        print(e)
