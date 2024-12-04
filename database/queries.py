@@ -40,7 +40,6 @@ def insert_root():
 
             print(title, description, status)
 
-
         cursor.execute("insert into nodes (title, description, status) values (%s, %s, %s)", (title, description, status))
         postgres.commit()
         
