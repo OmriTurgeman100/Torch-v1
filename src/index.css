@@ -6,7 +6,9 @@
 
 body {
   /* background-color: #ffffff; */
-  background-image: url("assets/view.jpg");
+    /* background: linear-gradient(to bottom, #212529, #343A40); */
+    /* background-color: #212529; */
+  background-image: url("assets/gradient.jpg");
   /* background-size: cover; */
 }
 
