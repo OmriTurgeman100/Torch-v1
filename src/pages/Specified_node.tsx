@@ -129,10 +129,10 @@ export const Specified_node = () => {
                   <h2 className="card">{node.status}</h2>
                   <h2 className="card-time">{node.time}</h2>
                 </Link>
-                <Checkbox
+                {/* <Checkbox
                   {...label}
                   sx={{ position: "absolute", left: "185px", top: "30px" }}
-                />
+                /> */}
                 <Button
                   onClick={() => handle_delete_node(node.node_id)}
                   sx={{
