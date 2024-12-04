@@ -9,11 +9,13 @@
 .card {
   margin-bottom: 10px;
   color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .card-time {
   color: white;
   font-size: 17.1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .single_card_expired {
@@ -26,6 +28,7 @@
   position: relative;
   width: 200px;
   overflow: hidden;
+  opacity: 70%;
 }
 
 .single_card_up {
@@ -38,6 +41,7 @@
   transition: transform 1s ease;
   width: 200px;
   overflow: hidden;
+  opacity: 100%;
 }
 
 .single_card_down {
