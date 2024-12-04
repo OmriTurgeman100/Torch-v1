@@ -4,7 +4,7 @@ import logging
 import json
 from datetime import datetime
 
-logging.basicConfig(level=logging.INFO, filename="log.log", filemode="a")
+# logging.basicConfig(level=logging.INFO, filename="log.log", filemode="a")
 def black_box_script():
     try:
         response = requests.get("https://example.com/")

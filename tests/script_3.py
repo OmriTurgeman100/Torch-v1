@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 import random
 
-logging.basicConfig(level=logging.INFO, filename="log.log", filemode="a")
+# logging.basicConfig(level=logging.INFO, filename="log.log", filemode="a")
 def black_box_script():
     try:
 
