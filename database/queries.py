@@ -18,7 +18,11 @@ def get_database_connection(): # * config
 def insert_root():
     try: 
         postgres = get_database_connection()
-        cursor = postgres.cursor() 
+        cursor = postgres.cursor()
+
+
+
+        # cursor.execute("insert into nodes (title, description) values (%s, %s)", ())
 
         
     
