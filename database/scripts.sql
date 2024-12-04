@@ -1,4 +1,4 @@
-delete from nodes;
+delete from nodes; 
 
 select * from nodes;
 
