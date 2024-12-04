@@ -37,7 +37,7 @@ type data = {
   nodes?: sub_nodes[];
 };
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+// const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 export const Specified_node = () => {
   const navigate = useNavigate();
