@@ -831,11 +831,9 @@ def run_background_threads():
 
     expired_tree_thread_process = Process(target=expired_tree_thread)
     expired_tree_thread_process.start()
-
-if __name__ == "__main__":
-    process = Process(target=rules_evaluation_thread)
-    process.start()
    
 if __name__ == "__main__":
     app.run(debug=False, port=80) #TODO when app is ready, change debug to false.
+    process = Process(target=rules_evaluation_thread)
+    process.start()
   
