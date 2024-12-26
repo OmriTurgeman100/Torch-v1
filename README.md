@@ -1,6 +1,6 @@
 # Torch: A Customizable Micro-Monitoring System
 
-**Torch** is a micro-monitoring system that enables users to create custom hierarchies and define rules for each layer. It utilizes multiprocessing in the backend for efficient performance. With Torch, users can structure their monitoring framework as needed and define specific actions or conditions at every level.
+**Torch** is a micro-monitoring system that enables users to create custom hierarchies and define rules for each layer. It utilizes multiprocessing in the backend for efficient performance. With Torch, users can structure their monitoring hierarchy as needed and define specific actions or conditions at every level.
 
 ---
 
