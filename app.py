@@ -15,7 +15,8 @@ app = Flask(__name__)
 
 CORS(app)
 
-logging.getLogger('werkzeug').setLevel(logging.ERROR) # * used to disable errors via terminal.
+# logging.getLogger('werkzeug').setLevel(logging.ERROR) # * used to disable errors via terminal. 
+# * disabled logging.
 
 def get_db_connection(): # * config
     try:
