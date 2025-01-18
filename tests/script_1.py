@@ -24,7 +24,7 @@ def ping(report_id,title, ip, description):
 def send_to_api(report_id, title, description, value):
     try:
 
-        api = "http://localhost/api/v1/post/reports"
+        api = "http://192.168.1.250/api/v1/post/reports"
 
         headers = {
             "Content-Type": "application/json"

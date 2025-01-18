@@ -834,7 +834,7 @@ def run_background_threads():
     expired_tree_thread_process.start()
    
 if __name__ == "__main__":
-    app.run(debug=False, port=80) #TODO when app is ready, change debug to false.
+    app.run(host='0.0.0.0', debug=False, port=80) #TODO when app is ready, change debug to false.
     process = Process(target=run_background_threads)
     process.start()
   
