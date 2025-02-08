@@ -830,7 +830,7 @@ def check_parent_node_rules(id):
 
 def run_background_threads():
 
-    print("background threads")
+    # print("background threads")
 
     rules_evaluation_thread_process = Process(target=rules_evaluation_thread)
     rules_evaluation_thread_process.start()
