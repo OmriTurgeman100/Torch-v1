@@ -20,7 +20,7 @@ def black_box_script():
             "title": 'sample report title',
             "description": 'sample report description',
             # "value": random.choice([50, 100]),
-            "value": 56
+            "value": 30
         }
 
         response = requests.post(api, data=json.dumps(body), headers=headers)

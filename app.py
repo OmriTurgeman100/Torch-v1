@@ -840,7 +840,7 @@ def run_background_threads():
    
 if __name__ == "__main__":
     run_background_threads()
-    app.run(host='0.0.0.0', debug=True, port=80) #TODO when app is ready, change debug to false.
+    app.run(host='0.0.0.0', debug=False, port=80) #TODO when app is ready, change debug to false.
     # process = Process(target=run_background_threads)
     # process.start()
   
