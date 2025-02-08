@@ -707,7 +707,7 @@ def get_specific_node_rule(id):
 def thread_evaluation(id):
     try:
 
-        print(id)
+        # print(id)
         
         postgres = get_db_connection()
         cursor = postgres.cursor(cursor_factory=RealDictCursor)
