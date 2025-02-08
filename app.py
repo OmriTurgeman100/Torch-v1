@@ -706,6 +706,9 @@ def get_specific_node_rule(id):
 
 def thread_evaluation(id):
     try:
+
+        print(id)
+        
         postgres = get_db_connection()
         cursor = postgres.cursor(cursor_factory=RealDictCursor)
 
@@ -827,6 +830,8 @@ def check_parent_node_rules(id):
 
 def run_background_threads():
 
+    print("background threads")
+
     rules_evaluation_thread_process = Process(target=rules_evaluation_thread)
     rules_evaluation_thread_process.start()
 
@@ -834,7 +839,8 @@ def run_background_threads():
     expired_tree_thread_process.start()
    
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=80) #TODO when app is ready, change debug to false.
-    process = Process(target=run_background_threads)
-    process.start()
+    run_background_threads()
+    app.run(host='0.0.0.0', debug=True, port=80) #TODO when app is ready, change debug to false.
+    # process = Process(target=run_background_threads)
+    # process.start()
   
