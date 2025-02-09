@@ -16,8 +16,8 @@ def black_box_script():
         }
 
         body = {
-            "report_id": 'sample report id',
-            "title": 'sample report title',
+            "report_id": 'sample report prod',
+            "title": 'sample report prod',
             "description": 'sample report description',
             # "value": random.choice([50, 100]),
             "value": 30
