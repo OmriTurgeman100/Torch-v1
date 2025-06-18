@@ -15,9 +15,9 @@ def black_box_script():
         }
 
         body = {
-            "report_id": 'sample report dev',
-            "title": 'sample report dev',
-            "description": 'sample report description',
+            "report_id": 'sample',
+            "title": 'sample',
+            "description": 'sample',
             "value": 60
         }
 
