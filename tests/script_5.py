@@ -18,7 +18,6 @@ def black_box_script():
             "report_id": 'sample report dev',
             "title": 'sample report dev',
             "description": 'sample report description',
-            # "value": random.choice([50, 100]),
             "value": 60
         }
 
